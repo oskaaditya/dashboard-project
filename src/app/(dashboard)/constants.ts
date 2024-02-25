@@ -22,3 +22,11 @@ export const NavbarLinks: NavbarLink[] = [
     path: '/help',
   },
 ];
+
+export const totalChart = [
+  { name: 'Page A', uv: 900, pv: 900, amt: 900 },
+  { name: 'Page B', uv: 1800, pv: 1800, amt: 1800 },
+  { name: 'Page C', uv: 3000, pv: 3000, amt: 3000 },
+  { name: 'Page D', uv: 1000, pv: 1000, amt: 1000 },
+  { name: 'Page E', uv: 4000, pv: 4000, amt: 4000 },
+];

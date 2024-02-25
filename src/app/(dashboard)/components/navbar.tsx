@@ -1,13 +1,18 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { NavbarLinks } from '../constants';
 import { Avatar, Button, Link } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
-import SearchIcon from '@/app/components/icons/SearchIcon';
+import { SearchIcon } from '@/app/components/iconsComponent/icons/SearchIcon';
+import { MessageIcon } from '@/app/components/iconsComponent/icons/MessageIcon';
+import { MenuIcon } from '@/app/components/iconsComponent/icons/MenuIcon';
+import { NotificationIcon } from '@/app/components/iconsComponent/icons/NotificationIcon';
+import { ThemeIcon } from '@/app/components/iconsComponent/icons/ThemeIcon';
 
 const Navbar = () => {
   const pathName = usePathname();
+  const [totalNotif, settotalNotif] = useState(2);
 
   return (
     <div className='flex items-center justify-between'>
@@ -26,72 +31,51 @@ const Navbar = () => {
         <Button
           isIconOnly
           aria-label='Search'
-          variant='ghost'
-          className='border-0 p-[11px] hover:bg-transparent'
+          variant='flat'
+          className='border-0 bg-transparent p-[11px] text-gray-500'
           size='lg'
         >
-          <SearchIcon
-            height={24}
-            width={24}
-            fill='#6B7280'
-            label='search-icon'
-          />
+          <SearchIcon width={20} height={20} viewBox='0 0 20 20' />
         </Button>
         <Button
           isIconOnly
-          aria-label='Search'
-          variant='ghost'
-          className='border-0 p-[11px] hover:bg-transparent'
+          aria-label='Message'
+          variant='flat'
+          className='border-0 bg-transparent p-[11px] text-gray-500'
           size='lg'
         >
-          <SearchIcon
-            height={24}
-            width={24}
-            fill='#6B7280'
-            label='search-icon'
-          />
+          <MessageIcon width={20} height={20} viewBox='0 0 20 20' />
+        </Button>
+        <Button
+          aria-label='Notification'
+          variant='flat'
+          className='relative min-w-0 border-0 bg-transparent p-[11px] text-gray-500'
+          size='lg'
+        >
+          <div className='absolute top-2 ml-3 h-[14px] rounded-full bg-primary-500 px-[4px] '>
+            <p className='mt-[1px] text-[10px] leading-none text-white'>
+              {totalNotif}
+            </p>
+          </div>
+          <NotificationIcon width={20} height={20} viewBox='0 0 20 20' />
         </Button>
         <Button
           isIconOnly
-          aria-label='Search'
-          variant='ghost'
-          className='border-0 p-[11px] hover:bg-transparent'
+          aria-label='Message'
+          variant='flat'
+          className='border-0 bg-transparent p-[11px] text-gray-500'
           size='lg'
         >
-          <SearchIcon
-            height={24}
-            width={24}
-            fill='#6B7280'
-            label='search-icon'
-          />
+          <MenuIcon width={20} height={20} viewBox='0 0 20 20' />
         </Button>
         <Button
           isIconOnly
-          aria-label='Search'
-          variant='ghost'
-          className='border-0 p-[11px] hover:bg-transparent'
+          aria-label='Message'
+          variant='flat'
+          className='border-0 bg-gray-100 p-[11px] text-primary-500'
           size='lg'
         >
-          <SearchIcon
-            height={24}
-            width={24}
-            fill='#6B7280'
-            label='search-icon'
-          />
-        </Button>
-        <Button
-          isIconOnly
-          aria-label='Search'
-          variant='ghost'
-          className='border-0 p-[11px] hover:bg-transparent'
-          size='lg'
-        >
-          <SearchIcon
-            height={24}
-            width={24}
-            fill='#6B7280'
-            label='search-icon'
-          />
+          <ThemeIcon width={20} height={20} viewBox='0 0 20 20' />
         </Button>
         <Avatar src='https://i.pravatar.cc/150?u=a042581f4e29026024d' />
       </div>
